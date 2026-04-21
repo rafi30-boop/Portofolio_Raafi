@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/common/Navbar";
 import Footer from "./components/common/Footer";
-import LandingPage from "./pages/LandingPage";
+import LandingPage from "./pages/landingpage";
 import Certificates from "./pages/Certificates";
 import CertificateDetail from "./pages/CertificateDetail"; // Tambahkan import
 import Projects from "./pages/Projects";
