@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
+  base: "/", // 🔥 TAMBAHKAN INI
   plugins: [react()],
   resolve: {
     extensions: [".js", ".jsx", ".json"],
@@ -12,7 +13,6 @@ export default defineConfig({
     },
   },
   build: {
-    // Optimasi build
     rollupOptions: {
       output: {
         manualChunks: (id) => {
