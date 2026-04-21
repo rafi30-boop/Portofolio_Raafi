@@ -431,8 +431,8 @@ const AboutSection = () => {
 
             <div className="bio-text">
               <p>
-                Halo! Saya Raafi, seorang siswa SMKN 1 Ciomas jurusan Rekayasa
-                Perangkat Lunak (RPL). Ketertarikan saya di dunia coding dimulai
+                Halo! Saya Raafi, seorang siswa SMKN 1 Ciomas jurusan Pengembangan
+                Perangkat Lunak Dan Game (PPLG). Ketertarikan saya di dunia coding dimulai
                 sejak kelas 10, ketika pertama kali belajar membuat website
                 sederhana dengan HTML dan CSS. Sejak saat itu, saya terus
                 belajar dan mengasah skill agar bisa menciptakan website yang
