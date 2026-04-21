@@ -5,11 +5,11 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],  // Vite akan otomatis mencari file dengan extensions ini
+    extensions: ['.js', '.jsx', '.json'],
   },
   server: {
     hmr: {
-      overlay: false  // Optional: disable error overlay
+      overlay: false
     }
   }
 })
