@@ -110,7 +110,7 @@ const TIMELINE = [
     year: "2022",
     title: "Masuk SMKN 1 Ciomas",
     description:
-      "Memulai perjalanan di jurusan Rekayasa Perangkat Lunak (RPL).",
+      "Memulai perjalanan di jurusan Pengembangan Perangkat Lunak Dan Game (PPLG).",
     icon: "🎓",
   },
   {
