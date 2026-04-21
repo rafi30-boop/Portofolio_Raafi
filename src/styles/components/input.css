@@ -1,0 +1,416 @@
+/* Input Component Styles */
+
+.input-group {
+  margin-bottom: var(--space-4);
+  width: 100%;
+}
+
+/* Label Styles */
+.input-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+  color: var(--gray-700);
+  transition: color var(--transition-base) ease;
+}
+
+.dark .input-label {
+  color: var(--gray-300);
+}
+
+.input-label.required::after {
+  content: '*';
+  color: var(--danger);
+  margin-left: var(--space-1);
+}
+
+/* Base Input Styles */
+.input {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius-lg);
+  background: white;
+  color: var(--gray-900);
+  transition: all var(--transition-base) ease;
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  outline: none;
+}
+
+.dark .input {
+  background: var(--gray-800);
+  border-color: var(--gray-700);
+  color: var(--gray-100);
+}
+
+/* Input Focus State */
+.input:focus {
+  outline: none;
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.dark .input:focus {
+  border-color: var(--primary-400);
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+/* Input Hover State */
+.input:hover:not(:disabled):not(:focus) {
+  border-color: var(--gray-400);
+}
+
+.dark .input:hover:not(:disabled):not(:focus) {
+  border-color: var(--gray-600);
+}
+
+/* Input Disabled State */
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: var(--gray-100);
+}
+
+.dark .input:disabled {
+  background: var(--gray-900);
+}
+
+/* Input Read Only State */
+.input:read-only {
+  background: var(--gray-50);
+  cursor: default;
+}
+
+.dark .input:read-only {
+  background: var(--gray-900);
+}
+
+/* Textarea Specific Styles */
+.input-textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: var(--font-sans);
+}
+
+.input-textarea:resize {
+  resize: vertical;
+}
+
+/* Input with Icons */
+.input-icon-left {
+  position: relative;
+}
+
+.input-icon-left .input {
+  padding-left: var(--space-10);
+}
+
+.input-icon-left .icon {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+  pointer-events: none;
+}
+
+.input-icon-right {
+  position: relative;
+}
+
+.input-icon-right .input {
+  padding-right: var(--space-10);
+}
+
+.input-icon-right .icon {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--gray-400);
+  cursor: pointer;
+}
+
+/* Input Sizes */
+.input-sm {
+  padding: var(--space-1) var(--space-2);
+  font-size: 0.875rem;
+}
+
+.input-lg {
+  padding: var(--space-3) var(--space-4);
+  font-size: 1.125rem;
+}
+
+/* Input with Error State */
+.input-error {
+  border-color: var(--danger) !important;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1) !important;
+}
+
+.error-message {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: 0.75rem;
+  color: var(--danger);
+}
+
+/* Input with Success State */
+.input-success {
+  border-color: var(--success) !important;
+}
+
+.input-success:focus {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1) !important;
+}
+
+.success-message {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: 0.75rem;
+  color: var(--success);
+}
+
+/* Input Helper Text */
+.input-helper {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.dark .input-helper {
+  color: var(--gray-400);
+}
+
+/* File Input Styles */
+.input-file {
+  padding: var(--space-2);
+  cursor: pointer;
+}
+
+.input-file::-webkit-file-upload-button {
+  padding: var(--space-1) var(--space-3);
+  background: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--radius);
+  color: var(--gray-700);
+  cursor: pointer;
+  margin-right: var(--space-2);
+  transition: all var(--transition-base) ease;
+}
+
+.dark .input-file::-webkit-file-upload-button {
+  background: var(--gray-700);
+  border-color: var(--gray-600);
+  color: var(--gray-300);
+}
+
+.input-file::-webkit-file-upload-button:hover {
+  background: var(--gray-200);
+}
+
+.dark .input-file::-webkit-file-upload-button:hover {
+  background: var(--gray-600);
+}
+
+/* Select Input Styles */
+.input-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right var(--space-3) center;
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  padding-right: var(--space-10);
+  cursor: pointer;
+}
+
+.dark .input-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+}
+
+/* Checkbox & Radio Styles */
+.input-checkbox,
+.input-radio {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  gap: var(--space-2);
+}
+
+.input-checkbox input,
+.input-radio input {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  accent-color: var(--primary-500);
+}
+
+.input-checkbox label,
+.input-radio label {
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+/* Input Group (Input with button) */
+.input-group-append {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.input-group-append .input {
+  flex: 1;
+}
+
+.input-group-append .btn {
+  flex-shrink: 0;
+}
+
+/* Floating Label Input */
+.input-floating {
+  position: relative;
+}
+
+.input-floating .input {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-2);
+}
+
+.input-floating .floating-label {
+  position: absolute;
+  left: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all var(--transition-base) ease;
+  pointer-events: none;
+  font-size: 1rem;
+  color: var(--gray-500);
+}
+
+.input-floating .input:focus ~ .floating-label,
+.input-floating .input:not(:placeholder-shown) ~ .floating-label {
+  top: var(--space-2);
+  font-size: 0.75rem;
+  color: var(--primary-500);
+}
+
+.dark .input-floating .input:focus ~ .floating-label,
+.dark .input-floating .input:not(:placeholder-shown) ~ .floating-label {
+  color: var(--primary-400);
+}
+
+/* Character Counter */
+.char-counter {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: var(--space-1);
+  font-size: 0.75rem;
+  color: var(--gray-500);
+}
+
+.char-counter.warning {
+  color: var(--warning);
+}
+
+.char-counter.danger {
+  color: var(--danger);
+}
+
+/* Password Toggle Button */
+.password-toggle {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--gray-500);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-toggle:hover {
+  color: var(--gray-700);
+}
+
+.dark .password-toggle:hover {
+  color: var(--gray-300);
+}
+
+/* Input Loading State */
+.input-loading {
+  position: relative;
+}
+
+.input-loading .input {
+  padding-right: var(--space-10);
+}
+
+.input-loading .loading-spinner {
+  position: absolute;
+  right: var(--space-3);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--gray-300);
+  border-top-color: var(--primary-500);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .input-group-append {
+    flex-direction: column;
+  }
+  
+  .input-group-append .btn {
+    width: 100%;
+  }
+  
+  .input {
+    font-size: 16px; /* Prevent zoom on mobile */
+  }
+}
+
+/* Animation for spin */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark mode specific adjustments */
+.dark .input::placeholder {
+  color: var(--gray-500);
+}
+
+.input::placeholder {
+  color: var(--gray-400);
+}
+
+/* Autofill Styles */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: var(--gray-900) !important;
+}
+
+.dark .input:-webkit-autofill,
+.dark .input:-webkit-autofill:hover,
+.dark .input:-webkit-autofill:focus,
+.dark .input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px var(--gray-800) inset !important;
+  -webkit-text-fill-color: var(--gray-100) !important;
+}

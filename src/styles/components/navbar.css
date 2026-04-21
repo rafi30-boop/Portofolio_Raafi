@@ -1,0 +1,398 @@
+/* src/styles/components/navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95) 0%,
+    rgba(248, 250, 252, 0.95) 100%
+  );
+  backdrop-filter: blur(16px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, background var(--transition-base) ease, padding var(--transition-base) ease;
+  transform: translateY(0);
+  padding: 12px 0; /* Kurangi padding */
+}
+
+/* Navbar hidden - auto hide on scroll down */
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+/* Scrolled state - lebih tipis */
+.navbar.navbar--scrolled {
+  padding: 8px 0; /* Lebih tipis saat di-scroll */
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(248, 250, 252, 0.98) 100%
+  );
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Pastikan hidden state tetap ada background saat scrolled */
+.navbar.navbar--scrolled.hidden {
+  transform: translateY(-100%);
+}
+
+.dark .navbar {
+  background: linear-gradient(
+    135deg,
+    rgba(17, 24, 39, 0.95) 0%,
+    rgba(15, 23, 42, 0.95) 100%
+  );
+  border-bottom-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dark .navbar.navbar--scrolled {
+  background: linear-gradient(
+    135deg,
+    rgba(17, 24, 39, 0.98) 0%,
+    rgba(15, 23, 42, 0.98) 100%
+  );
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+  height: 56px; /* Kurangi dari 90px ke 56px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: height var(--transition-base) ease;
+}
+
+.navbar.navbar--scrolled .navbar-container {
+  height: 48px; /* Kurangi dari 70px ke 48px */
+}
+
+@media (min-width: 640px) {
+  .navbar-container {
+    padding: 0 var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar-container {
+    padding: 0 var(--space-8);
+  }
+}
+
+.navbar-logo {
+  font-size: 1.4rem; /* Kurangi dari 1.75rem */
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: transform var(--transition-base) ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.02);
+}
+
+.navbar-menu {
+  display: none;
+  align-items: center;
+  gap: var(--space-4); /* Kurangi gap dari space-8 (32px) ke space-4 (16px) */
+}
+
+@media (min-width: 768px) {
+  .navbar-menu {
+    display: flex;
+  }
+}
+
+.navbar-link {
+  color: var(--gray-700);
+  text-decoration: none;
+  transition: color var(--transition-base) ease;
+  font-weight: 500;
+  font-size: 0.9rem; /* Kurangi dari 1rem */
+  position: relative;
+  padding: 6px 10px; /* Kurangi padding */
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.dark .navbar-link {
+  color: var(--gray-300);
+}
+
+.navbar-link:hover {
+  color: #667eea;
+}
+
+/* Active link indicator */
+.navbar-link--active {
+  color: #667eea;
+}
+
+.navbar-link--active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar-link:hover::after {
+  width: 40%;
+}
+
+/* Button styles dalam navbar */
+.navbar-menu .btn {
+  padding: 6px 16px; /* Kurangi padding */
+  font-size: 0.85rem; /* Kurangi font size */
+  border-radius: 8px;
+  transition: all var(--transition-base) ease;
+}
+
+.navbar-menu .btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+}
+
+.navbar-menu .btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(102, 126, 234, 0.4);
+}
+
+.navbar-menu .btn-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: none;
+}
+
+.navbar-menu .btn-danger:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 10px rgba(239, 68, 68, 0.4);
+}
+
+/* Theme Toggle dalam navbar */
+.navbar-menu .theme-toggle {
+  margin: 0 2px;
+  width: 32px;
+  height: 32px;
+  font-size: 1rem;
+  padding: 6px;
+}
+
+/* Mobile button */
+.navbar-mobile-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--gray-700);
+  transition: all 0.3s ease;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+}
+
+.mobile-menu-toggle:hover {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.dark .mobile-menu-toggle {
+  color: var(--gray-300);
+}
+
+.dark .mobile-menu-toggle:hover {
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.15);
+}
+
+@media (min-width: 768px) {
+  .navbar-mobile-button {
+    display: none;
+  }
+}
+
+/* Mobile Menu */
+.navbar-mobile-menu {
+  position: absolute;
+  top: 56px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(248, 250, 252, 0.98) 100%
+  );
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding: var(--space-3);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+  max-height: calc(100vh - 56px);
+  overflow-y: auto;
+  animation: slideDown 0.3s ease;
+}
+
+.navbar.navbar--scrolled .navbar-mobile-menu {
+  top: 48px;
+  max-height: calc(100vh - 48px);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dark .navbar-mobile-menu {
+  background: linear-gradient(
+    180deg,
+    rgba(17, 24, 39, 0.98) 0%,
+    rgba(15, 23, 42, 0.98) 100%
+  );
+  border-top-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+}
+
+.navbar-mobile-link {
+  display: block;
+  padding: 10px 16px;
+  color: var(--gray-700);
+  text-decoration: none;
+  border-radius: var(--radius);
+  transition: all var(--transition-base) ease;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin: 2px 0;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.dark .navbar-mobile-link {
+  color: var(--gray-300);
+}
+
+.navbar-mobile-link:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1) 0%,
+    rgba(118, 75, 162, 0.1) 100%
+  );
+  color: #667eea;
+  padding-left: 24px;
+}
+
+.dark .navbar-mobile-link:hover {
+  background: rgba(102, 126, 234, 0.15);
+}
+
+/* Mobile menu button variants */
+.navbar-mobile-link.btn-primary,
+.navbar-mobile-link.btn-danger {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.navbar-mobile-link.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.navbar-mobile-link.btn-danger {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+  }
+  
+  .navbar-mobile-button {
+    display: flex;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .navbar,
+  .navbar-container,
+  .navbar-link::after,
+  .navbar-mobile-menu,
+  .navbar-mobile-link {
+    transition: none;
+    animation: none;
+  }
+  
+  .navbar-mobile-menu {
+    animation: none;
+  }
+}
+
+/* Light mode specific overrides */
+@media (prefers-color-scheme: light) {
+  .navbar-link--active {
+    color: #667eea;
+  }
+}
+
+/* Smooth scroll offset untuk anchor links */
+html {
+  scroll-padding-top: 65px;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 55px;
+  }
+}
