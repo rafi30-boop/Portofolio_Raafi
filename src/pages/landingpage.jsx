@@ -40,26 +40,20 @@ const SOCIAL_LINKS = [
   {
     id: "github",
     icon: FaGithub,
-    url: "https://github.com/raafifajar",
+    url: "https://github.com/rafi30-boop",
     label: "GitHub",
   },
   {
     id: "linkedin",
     icon: FaLinkedin,
-    url: "https://linkedin.com/in/raafifajar",
+    url: "https://www.linkedin.com/in/raafi-fajar-66b9793a5/",
     label: "LinkedIn",
   },
   {
     id: "instagram",
     icon: FaInstagram,
-    url: "https://instagram.com/raafifajar",
+    url: "https://www.instagram.com/raftssst/",
     label: "Instagram",
-  },
-  {
-    id: "email",
-    icon: FaEnvelope,
-    url: "mailto:raafifajar892@gmail.com",
-    label: "Email",
   },
 ];
 
