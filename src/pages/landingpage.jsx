@@ -312,11 +312,7 @@ const HeroSection = () => {
       <div className="hero-orb hero-orb--4" aria-hidden="true" />
 
       <div className="hero-container">
-        <div className="hero-badge">
-          <span className="hero-badge__dot" />
-          <span>STATUS: MENCARI PKL / MAGANG</span>
-        </div>
-
+       
         <h1 className="hero-title">
           <span className="gradient-text">RAAFI MUHAMAD FAJAR</span>
         </h1>

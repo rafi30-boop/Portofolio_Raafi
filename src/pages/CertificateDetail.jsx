@@ -2,18 +2,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { certificatesAPI } from "../services/api.js";
-import { 
-  FaArrowLeft, 
-  FaCalendarAlt, 
-  FaIdCard, 
-  FaExternalLinkAlt, 
-  FaDownload, 
+import {
+  FaArrowLeft,
+  FaCalendarAlt,
+  FaIdCard,
+  FaExternalLinkAlt,
+  FaDownload,
   FaShare,
   FaFilePdf,
   FaFileWord,
   FaFileAlt,
   FaImage,
-  FaEye
+  FaEye,
 } from "react-icons/fa";
 import Button from "../styles/components/ui/Button.jsx";
 import toast from "react-hot-toast";
@@ -96,7 +96,9 @@ const CertificateDetail = () => {
       <div className="detail-notfound">
         <div className="notfound-icon">📜</div>
         <h2>Certificate not found</h2>
-        <p>The certificate you're looking for doesn't exist or has been removed.</p>
+        <p>
+          The certificate you're looking for doesn't exist or has been removed.
+        </p>
         <Link to="/certificates">
           <Button>Back to Certificates</Button>
         </Link>
@@ -120,11 +122,15 @@ const CertificateDetail = () => {
               {fileIsImage ? (
                 // Tampilkan Gambar
                 <img
-                  src={certificate.image_url || "https://dummyimage.com/600x400/1a1a2e/ffffff&text=Certificate"}
+                  src={
+                    certificate.image_url ||
+                    "https://dummyimage.com/600x400/1a1a2e/ffffff&text=Certificate"
+                  }
                   alt={certificate.title}
                   onLoad={() => setImageLoaded(true)}
                   onError={(e) => {
-                    e.target.src = "https://dummyimage.com/600x400/1a1a2e/ffffff&text=Certificate";
+                    e.target.src =
+                      "https://dummyimage.com/600x400/1a1a2e/ffffff&text=Certificate";
                     setImageLoaded(true);
                   }}
                 />
@@ -136,17 +142,17 @@ const CertificateDetail = () => {
                       <FaFilePdf /> PDF Document
                     </span>
                     <div className="pdf-toolbar-actions">
-                      <a 
-                        href={certificate.image_url} 
-                        target="_blank" 
+                      <a
+                        href={certificate.image_url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="pdf-toolbar-btn"
                         title="Open in new tab"
                       >
                         <FaExternalLinkAlt />
                       </a>
-                      <a 
-                        href={certificate.image_url} 
+                      <a
+                        href={certificate.image_url}
                         download
                         className="pdf-toolbar-btn"
                         title="Download PDF"
@@ -163,7 +169,16 @@ const CertificateDetail = () => {
                     onLoad={() => setImageLoaded(true)}
                   />
                   <div className="pdf-footer">
-                    <p>Having trouble viewing? <a href={certificate.image_url} target="_blank" rel="noopener noreferrer">Open PDF directly</a></p>
+                    <p>
+                      Having trouble viewing?{" "}
+                      <a
+                        href={certificate.image_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Open PDF directly
+                      </a>
+                    </p>
                   </div>
                 </div>
               ) : certificate.image_url ? (
@@ -174,18 +189,21 @@ const CertificateDetail = () => {
                   </div>
                   <div className="file-info-detail">
                     <h4>{getFileTypeLabel(certificate.image_url)}</h4>
-                    <p>{certificate.image_url?.split('/').pop() || "No file attached"}</p>
+                    <p>
+                      {certificate.image_url?.split("/").pop() ||
+                        "No file attached"}
+                    </p>
                     <div className="file-buttons">
-                      <a 
-                        href={certificate.image_url} 
-                        target="_blank" 
+                      <a
+                        href={certificate.image_url}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="view-file-btn"
                       >
                         <FaExternalLinkAlt /> Open File
                       </a>
-                      <a 
-                        href={certificate.image_url} 
+                      <a
+                        href={certificate.image_url}
                         download
                         className="view-file-btn secondary"
                       >
@@ -209,7 +227,7 @@ const CertificateDetail = () => {
             <div className="certificate-badge">
               <span>Verified Certificate</span>
             </div>
-            
+
             <h1 className="detail-title">{certificate.title}</h1>
 
             {certificate.description && (
@@ -226,11 +244,14 @@ const CertificateDetail = () => {
                 <div className="meta-info">
                   <span>Issue Date</span>
                   <strong>
-                    {new Date(certificate.issue_date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })}
+                    {new Date(certificate.issue_date).toLocaleDateString(
+                      "en-US",
+                      {
+                        year: "numeric",
+                        month: "long",
+                        day: "numeric",
+                      },
+                    )}
                   </strong>
                 </div>
               </div>
@@ -256,13 +277,14 @@ const CertificateDetail = () => {
                   rel="noopener noreferrer"
                   className="btn-primary"
                 >
-                  <FaExternalLinkAlt /> {fileIsImage ? "View Certificate" : "Open File"}
+                  <FaExternalLinkAlt />{" "}
+                  {fileIsImage ? "View Certificate" : "Open File"}
                 </a>
               )}
               {certificate.image_url && (
                 <a
                   href={certificate.image_url}
-                  download={certificate.image_url.split('/').pop()}
+                  download={certificate.image_url.split("/").pop()}
                   className="btn-secondary"
                 >
                   <FaDownload /> Download
@@ -753,7 +775,7 @@ const CertificateDetail = () => {
           }
           
           .file-buttons {
-            flex-direction: column;
+            flex-direction: column; 
           }
           
           .view-file-btn {
